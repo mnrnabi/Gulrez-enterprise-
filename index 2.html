@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulrez Enterprise - Code Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .verified {
+            color: green;
+            font-size: 20px;
+        }
+        .unverified {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gulrez Enterprise</h1>
+    <h2>Code Verification</h2>
+    <p>Enter your code below to check verification status:</p>
+    <input type="number" id="codeInput" placeholder="Enter code..." />
+    <button onclick="verifyCode()">Verify</button>
+    <p id="result"></p>
+
+    <script>
+        function verifyCode() {
+            var code = document.getElementById("codeInput").value;
+            var result = document.getElementById("result");
+
+            if (code >= 1000 && code <= 10000) {
+                result.innerHTML = "Verified";
+                result.className = "verified";
+            } else {
+                result.innerHTML = "Unverified";
+                result.className = "unverified";
+            }
+        }
+    </script>
+</body>
+</html>
